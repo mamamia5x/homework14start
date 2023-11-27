@@ -37,6 +37,7 @@ public class BinaryTree<E> {
      */
     public BinaryTree(E value, BinaryTree<E> left, BinaryTree<E> right) {
         this.value = value;
+        parent = null;
         leftChild = left;
         if (left != null) {
             left.parent = this;
