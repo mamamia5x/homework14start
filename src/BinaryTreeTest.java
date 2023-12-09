@@ -7,7 +7,7 @@
  */
 
 import org.junit.jupiter.api.Assertions;
-import username.BinaryTree;
+import mamamia5x.BinaryTree;
 
 class BinaryTreeTest {
 

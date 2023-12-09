@@ -6,7 +6,10 @@
  * Created: 9/25/2023
  */
 
-package username;
+package mamamia5x;
+
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Represents a binary tree of arbitrary type. A tree consists of
@@ -77,7 +80,10 @@ public class BinaryTree<E> {
      * @return True if the tree is the left child of its parent
      */
     public boolean isLeftChild() {
-        return false; // TODO
+        if (this.parent != null) {
+            return this.equals(this.parent.leftChild);
+        }
+        return false;
     }
 
     /**
@@ -95,6 +101,12 @@ public class BinaryTree<E> {
      * @throws IllegalStateException if the right child is null
      */
     public BinaryTree<E> leftRotate() {
-        return null; // TODO
+        if (this.rightChild == null) {
+            throw new IllegalStateException();
+        }
+        BinaryTree<E> temp = this.rightChild;
+        this.rightChild = temp.leftChild;
+        temp.leftChild = this;
+        return this.parent;
     }
 }
